@@ -15,19 +15,19 @@ namespace Generic.Daemon
             _logger = logger;
         }
 
+        public override void Dispose()
+        {
+            base.Dispose();
+            GC.SuppressFinalize(this);
+            _logger.LogInformation("Daemon is disposed.");
+        }
+
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             _logger.LogInformation("Daemon is running ExecuteAsync.");
             _logger.LogDebug("Extra debug logging is shown.");
 
             await Task.CompletedTask;
-        }
-
-        public override void Dispose()
-        {
-            base.Dispose();
-            GC.SuppressFinalize(this);
-            _logger.LogInformation("Daemon is disposed.");
         }
     }
 }

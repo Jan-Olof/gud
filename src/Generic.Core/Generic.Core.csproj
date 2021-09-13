@@ -4,6 +4,5 @@
 		<TargetFramework>net5.0</TargetFramework>
 		<Nullable>enable</Nullable>
 		<TargetLatestRuntimePatch>true</TargetLatestRuntimePatch>
-		<LangVersion>latest</LangVersion>
 	</PropertyGroup>
 </Project>
