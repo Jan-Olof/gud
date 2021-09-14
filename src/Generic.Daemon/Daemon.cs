@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using Unit = System.ValueTuple;
 
 namespace Generic.Daemon
 {
@@ -26,6 +27,8 @@ namespace Generic.Daemon
         {
             _logger.LogInformation("Daemon is running ExecuteAsync.");
             _logger.LogDebug("Extra debug logging is shown.");
+
+            // Func<Unit> HandleMessages;
 
             await Task.CompletedTask;
         }
