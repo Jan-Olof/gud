@@ -22,10 +22,10 @@ namespace Generic.Common.Messages
                 Filter = "*.*"
             };
 
-            watcher.Changed += new FileSystemEventHandler(onChanged);
+            //watcher.Changed += new FileSystemEventHandler(onChanged);
             watcher.Created += new FileSystemEventHandler(onChanged);
-            watcher.Deleted += new FileSystemEventHandler(onChanged);
-            watcher.Renamed += new RenamedEventHandler(onChanged);
+            //watcher.Deleted += new FileSystemEventHandler(onChanged);
+            //watcher.Renamed += new RenamedEventHandler(onChanged);
 
             watcher.EnableRaisingEvents = true;
         }

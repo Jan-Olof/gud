@@ -11,6 +11,6 @@ namespace Generic.Core
             message => ProcessOneMessage(message);
 
         private static Unit ProcessOneMessage(Message message) =>
-            Unit();
+            Unit(); // TODO: Continue here!
     }
 }

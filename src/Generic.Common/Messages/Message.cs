@@ -4,10 +4,7 @@ namespace Generic.Common.Messages
 {
     public sealed record Message
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Message" /> class.
-        /// </summary>
-        private Message(Guid messageId, string data, DateTime timestamp, MessageTypes type)
+        public Message(Guid messageId, string data, DateTime timestamp, MessageTypes type)
         {
             Data = data;
             MessageId = messageId;
@@ -15,15 +12,12 @@ namespace Generic.Common.Messages
             Type = type;
         }
 
-        public string Data { get; }
+        public string Data { get; init; }
 
-        public Guid MessageId { get; }
+        public Guid MessageId { get; init; }
 
-        public DateTime Timestamp { get; }
+        public DateTime Timestamp { get; init; }
 
-        public MessageTypes Type { get; }
-
-        public static Message Create(Guid messageId, string data, DateTime timestamp, MessageTypes type) =>
-            new Message(messageId, data, timestamp, type);
+        public MessageTypes Type { get; init; }
     }
 }

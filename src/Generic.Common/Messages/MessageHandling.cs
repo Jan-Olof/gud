@@ -1,23 +1,15 @@
-﻿using System;
-using System.IO;
+﻿using Generic.Daemon.Config;
+using Microsoft.Extensions.Logging;
+using System;
 using Unit = System.ValueTuple;
 
 namespace Generic.Common.Messages
 {
-    public class MessageHandling
+    public abstract class MessageHandling
     {
-        public MessageHandling()
-        {
-        }
+        public abstract void StartMonitoring();
 
-        public void HandleMessages(Func<Message, Unit> processMessage)
-        {
-            MonitorFiles.MonitorFolder(@"C:\tmp", NewMessage);
-        }
-
-        public void NewMessage(object source, FileSystemEventArgs e)
-        {
-            string text = File.ReadAllText(e.FullPath);
-        }
+        public static MessageHandling GetHandler(ILogger logger, MessageHandler msgHandlerConfig, Func<Message, Unit> processMessage) =>
+            new FolderMessageHandling(logger, msgHandlerConfig, processMessage);
     }
 }
