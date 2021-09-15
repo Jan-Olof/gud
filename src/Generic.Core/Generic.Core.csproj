@@ -5,4 +5,12 @@
 		<Nullable>enable</Nullable>
 		<TargetLatestRuntimePatch>true</TargetLatestRuntimePatch>
 	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="LaYumba.Functional" Version="0.10.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Generic.Common\Generic.Common.csproj" />
+	</ItemGroup>
 </Project>

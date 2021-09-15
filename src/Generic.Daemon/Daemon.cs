@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Hosting;
+﻿using Generic.Common.Messages;
+using Generic.Core;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Threading;
@@ -28,7 +30,8 @@ namespace Generic.Daemon
             _logger.LogInformation("Daemon is running ExecuteAsync.");
             _logger.LogDebug("Extra debug logging is shown.");
 
-            // Func<Unit> HandleMessages;
+            var msg = new MessageHandling();
+            msg.HandleMessages(ProcessMessage.Process());
 
             await Task.CompletedTask;
         }
