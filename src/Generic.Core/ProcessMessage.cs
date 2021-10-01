@@ -10,7 +10,14 @@ namespace Generic.Core
         public static Func<Message, Unit> Process() =>
             message => ProcessOneMessage(message);
 
-        private static Unit ProcessOneMessage(Message message) =>
-            Unit(); // TODO: Continue here!
+        private static Unit ProcessOneMessage(Message message) // TODO: Some tests!
+        {
+            var oneMessage = message.CreateRequest() // TODO: Do things.
+                .Match(
+                    request => Unit(),
+                    x => Unit());
+
+            return oneMessage; // TODO: Fix ProcessOneMessage when interactor returns something.
+        }
     }
 }

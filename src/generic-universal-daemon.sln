@@ -3,18 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generic.Daemon", "Generic.Daemon\Generic.Daemon.csproj", "{97FEF22C-D29A-4629-A181-D33706D177F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Generic.Daemon", "Generic.Daemon\Generic.Daemon.csproj", "{97FEF22C-D29A-4629-A181-D33706D177F0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2DEC8641-1DE6-4830-8C7F-82A2411EF04E}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		message.json = message.json
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Generic", "Generic", "{CAA59E4B-F2F5-4337-B895-9E38E7362F58}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generic.Common", "Generic.Common\Generic.Common.csproj", "{030BAC92-533A-4491-874D-545BB09FD625}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Generic.Common", "Generic.Common\Generic.Common.csproj", "{030BAC92-533A-4491-874D-545BB09FD625}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generic.Core", "Generic.Core\Generic.Core.csproj", "{21531D1A-C9C5-4D81-A381-7F2990352B13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Generic.Core", "Generic.Core\Generic.Core.csproj", "{21531D1A-C9C5-4D81-A381-7F2990352B13}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
