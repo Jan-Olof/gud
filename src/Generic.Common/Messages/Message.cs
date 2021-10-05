@@ -1,18 +1,19 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Generic.Common.Messages
 {
-    public sealed record Message
+    public abstract record Message
     {
-        public Message(Guid messageId, string data, DateTime timestamp, MessageTypes type)
+        public Message(Guid messageId, DateTime timestamp, MessageTypes type)
         {
-            Data = data;
             MessageId = messageId;
             Timestamp = timestamp;
             Type = type;
         }
-
-        public string Data { get; init; }
 
         public Guid MessageId { get; init; }
 

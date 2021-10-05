@@ -11,9 +11,9 @@ namespace Generic.Common.Messages
     {
         private readonly ILogger _logger;
         private readonly MessageHandler _msgHandlerConfig;
-        private readonly Func<Message, Unit> _processMessage;
+        private readonly Func<RawMessage, Unit> _processMessage;
 
-        public FolderMessageHandling(ILogger logger, MessageHandler msgHandlerConfig, Func<Message, Unit> processMessage)
+        public FolderMessageHandling(ILogger logger, MessageHandler msgHandlerConfig, Func<RawMessage, Unit> processMessage)
         {
             _logger = logger;
             _msgHandlerConfig = msgHandlerConfig;
@@ -25,7 +25,7 @@ namespace Generic.Common.Messages
 
         private void NewMessage(object source, FileSystemEventArgs e) =>
             File.ReadAllText(e.FullPath)
-                .Deserialize<Message>()
+                .Deserialize<RawMessage>()
                 .Match(e => e.Log(_logger), m => _processMessage(m));
     }
 }

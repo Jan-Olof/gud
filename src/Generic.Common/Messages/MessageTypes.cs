@@ -3,8 +3,8 @@
     public enum MessageTypes
     {
         Unknown = -1,
-        NewThing = 0,
-        ThingChanged = 1,
-        ThingRemoved = 2
+        AddRequested = 0,
+        ChangeRequested = 1,
+        RemoveRequested = 2
     }
 }

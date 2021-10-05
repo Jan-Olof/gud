@@ -7,17 +7,10 @@ namespace Generic.Core
 {
     public static class ProcessMessage
     {
-        public static Func<Message, Unit> Process() =>
-            message => ProcessOneMessage(message);
+        public static Func<RawMessage, Unit> Process(Func<DateTime> now, Func<Guid> guid) =>
+            message => ProcessOneMessage(message, now, guid);
 
-        private static Unit ProcessOneMessage(Message message) // TODO: Some tests!
-        {
-            var oneMessage = message.CreateRequest() // TODO: Do things.
-                .Match(
-                    request => Unit(),
-                    x => Unit());
-
-            return oneMessage; // TODO: Fix ProcessOneMessage when interactor returns something.
-        }
+        private static Unit ProcessOneMessage(RawMessage message, Func<DateTime> now, Func<Guid> guid) =>
+            message.RunInteractor(now, guid);
     }
 }

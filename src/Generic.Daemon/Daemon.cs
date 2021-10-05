@@ -35,7 +35,14 @@ namespace Generic.Daemon
             var msgHandlerConfig = ConfigurationHelper.GetConfiguration().GetSection("MessageHandler").Get<MessageHandler>();
             if (msgHandlerConfig == null) throw new ArgumentNullException("MessageHandler is null.");
 
-            MessageHandling.GetHandler(_logger, msgHandlerConfig, ProcessMessage.Process()).StartMonitoring();
+            MessageHandling
+                .GetHandler(
+                    _logger,
+                    msgHandlerConfig,
+                    ProcessMessage.Process(
+                        () => DateTime.UtcNow,
+                        () => Guid.NewGuid()))
+                .StartMonitoring();
 
             await Task.CompletedTask;
         }

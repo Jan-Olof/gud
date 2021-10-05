@@ -9,7 +9,7 @@ namespace Generic.Common.Messages
     {
         public abstract void StartMonitoring();
 
-        public static MessageHandling GetHandler(ILogger logger, MessageHandler msgHandlerConfig, Func<Message, Unit> processMessage) =>
+        public static MessageHandling GetHandler(ILogger logger, MessageHandler msgHandlerConfig, Func<RawMessage, Unit> processMessage) =>
             new FolderMessageHandling(logger, msgHandlerConfig, processMessage);
     }
 }
